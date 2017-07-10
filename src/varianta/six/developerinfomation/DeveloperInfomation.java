@@ -4,22 +4,29 @@
  */
 package varianta.six.developerinfomation;
 
+import java.io.IOException;
 import java.text.ParseException;
-import varianta.six.developerinfomation.action.Action;
+import java.util.Date;
+import varianta.six.developerinfomation.action.OutputData;
+import varianta.six.developerinfomation.action.WorkWithDate;
 
 /**
  *
  * @author SLAVA
  */
 public class DeveloperInfomation {
-
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParseException {
-        Action action= new Action();
-        action.OutputDeveloper("Сухочева");
-        action.getDateBegin("20.06.2017", "12:00");
-        action.getDateFinish("20.06.2017", "12:00",14);
+    public static void main(String[] args) throws IOException  {
+        String developer="Сухочева";
+        OutputData.println("Фамилия разработчика "+developer);
+        WorkWithDate actionDate = new WorkWithDate();
+        Date dateBegin = actionDate.getDateBegin("20.06.2017", "12:00");
+        OutputData.println("Дата и время получения задания " + actionDate.DATE_FORMAT.format(dateBegin));
+        Date dateFinish = actionDate.getDateFinish("20.06.2017", "12:00",14);
+        OutputData.println("Дата и время сдачи задания " + actionDate.DATE_FORMAT.format(dateFinish));
+        
     }
 }
