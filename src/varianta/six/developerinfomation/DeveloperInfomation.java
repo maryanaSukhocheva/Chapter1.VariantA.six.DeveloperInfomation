@@ -24,9 +24,9 @@ public class DeveloperInfomation {
         OutputData.println("Фамилия разработчика "+developer);
         WorkWithDate actionDate = new WorkWithDate();
         Date dateBegin = actionDate.getDateBegin("20.06.2017", "12:00");
-        OutputData.println("Дата и время получения задания " + actionDate.DATE_FORMAT.format(dateBegin));
+        OutputData.println("Дата и время получения задания " + WorkWithDate.DATE_FORMAT.format(dateBegin));
         Date dateFinish = actionDate.getDateFinish("20.06.2017", "12:00",14);
-        OutputData.println("Дата и время сдачи задания " + actionDate.DATE_FORMAT.format(dateFinish));
+        OutputData.println("Дата и время сдачи задания " + WorkWithDate.DATE_FORMAT.format(dateFinish));
         
     }
 }
